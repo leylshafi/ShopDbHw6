@@ -1,0 +1,72 @@
+﻿<Window x:Class="ShopDbHw6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopDbHw6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1000" Background="Beige" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBlock Margin="60 5" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="18">Category:</TextBlock>
+                <ComboBox x:Name="categoriescb" Margin="60 0 60 0" ItemsSource="{Binding}" BorderBrush="Purple" SelectionChanged="categoriescb_SelectionChanged">
+
+                </ComboBox>
+
+                <TextBlock Margin="60 30 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="18">Search</TextBlock>
+                <TextBox x:Name="SearchTxt" Margin="60 0" BorderBrush="MediumPurple" Foreground="Purple" TextChanged="TextBox_TextChanged"></TextBox>
+            </StackPanel>
+            <StackPanel Margin="60 0" Grid.Row="1" Orientation="Horizontal">
+                <Button Margin="10"
+  Style="{StaticResource MaterialDesignPaperSecondaryLightButton}"
+  ToolTip="Resource name: MaterialDesignPaperSecondaryLightButton"
+  Content="ADD"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="Button_Click" />
+                <Button Margin="10"
+  Style="{StaticResource MaterialDesignPaperSecondaryLightButton}"
+  ToolTip="Resource name: MaterialDesignPaperSecondaryLightButton"
+  Content="EDIT"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="Button_Click_2" />
+                <Button Margin="10"
+  Style="{StaticResource MaterialDesignPaperSecondaryLightButton}"
+  ToolTip="Resource name: MaterialDesignPaperSecondaryLightButton"
+  Content="DELETE"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="Button_Click_1" />
+            </StackPanel>
+        </Grid>
+        <ListView Grid.Column="1" x:Name="ProductList" MouseDoubleClick="ProductList_MouseDoubleClick">
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Id}"
+        Header="Id" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Name}"
+        Header="Name" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Price}"
+        Header="Price" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding CategoryId}"
+        Header="CategoryId" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Quantity}"
+        Header="Quantity" />
+                    <GridViewColumn
+        DisplayMemberBinding="{Binding Rating}"
+        Header="Rating" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Window>

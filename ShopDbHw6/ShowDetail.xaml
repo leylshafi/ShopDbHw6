@@ -1,0 +1,39 @@
+﻿<Window x:Class="ShopDbHw6.ShowDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopDbHw6"
+        mc:Ignorable="d"
+        Title="ShowDetail" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="60 10 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25">Id:</TextBlock>
+                <TextBlock Margin="40 10" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25" Text="{Binding Id}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="60 10 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25">Name:</TextBlock>
+                <TextBlock Margin="40 10" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25" Text="{Binding ProductName}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="60 10 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25">Price:</TextBlock>
+                <TextBlock Margin="40 10" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25" Text="{Binding Price}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="60 10 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25">CategoryId:</TextBlock>
+                <TextBlock Margin="40 10" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25" Text="{Binding CategoryId}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="60 10 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25">Quantity:</TextBlock>
+                <TextBlock Margin="40 10" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25" Text="{Binding Quantity}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="60 10 0 20" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25">Rating:</TextBlock>
+                <TextBlock Margin="40 10" Foreground="Purple" FontFamily="Bookman Old Style" FontSize="25" Text="Null"></TextBlock>
+            </StackPanel>
+            <Button FontSize="25" Height="40" Width="200" Margin="10" Click="Button_Click">Close Window</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
